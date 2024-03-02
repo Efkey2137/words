@@ -1,4 +1,3 @@
-// Vocabulary.tsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useDictionary from '../hooks/useDictionary';
@@ -22,9 +21,9 @@ const Vocabulary: React.FC = () => {
         setDefinition(firstDefinition);
         const addedSuccessfully = addWordToDictionary(word, firstDefinition);
         if (addedSuccessfully) {
-          setWord(''); // Resetowanie wartości pola tekstowego po dodaniu słowa
+          setWord('');
         } else {
-          alert('Słowo już istnieje w słowniku.'); // Informacja, jeśli słowo już istnieje w słowniku
+          alert('Słowo już istnieje w słowniku.');
         }
       } else {
         setDefinition('Definicja nie została znaleziona.');

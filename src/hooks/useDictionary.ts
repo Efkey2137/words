@@ -1,4 +1,3 @@
-// useDictionary.ts
 import { useState } from 'react';
 
 const useDictionary = () => {
@@ -13,9 +12,9 @@ const useDictionary = () => {
       const newDictionary = [...dictionary, { word, definition }];
       setDictionary(newDictionary);
       localStorage.setItem('dictionary', JSON.stringify(newDictionary));
-      return true; // Sukces: słowo dodane do słownika
+      return true;
     } else {
-      return false; // Błąd: słowo już istnieje w słowniku
+      return false;
     }
   };
 
