@@ -32,8 +32,11 @@ a::after{
 a:hover::after{
   width: 10%;
 }
-h1,h2,p{
+h1,h2,p, li{
   color: whitesmoke;
+}
+ul li{
+  list-style-type: none;
 }
 p{
   font-size: 20px;
