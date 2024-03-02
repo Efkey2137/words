@@ -1,3 +1,21 @@
+#Aplikacja do nauki słówek
+
+Aplikacja będzie dostępna pod adresem `http://localhost:3000/` w przeglądarce.
+
+## Użycie
+
+1. Dodawanie Słówek:
+ - Przejdź do zakładki "Vocabulary".
+ - Wprowadź nowe słowo do pola tekstowego.
+ - Kliknij przycisk "Add".
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
