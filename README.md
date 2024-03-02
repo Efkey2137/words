@@ -1,4 +1,4 @@
-#Aplikacja do nauki słówek
+# Aplikacja do nauki słówek
 
 Aplikacja będzie dostępna pod adresem `http://localhost:3000/` w przeglądarce.
 
@@ -7,13 +7,8 @@ Aplikacja będzie dostępna pod adresem `http://localhost:3000/` w przeglądarce
 1. Dodawanie Słówek:
  - Przejdź do zakładki "Vocabulary".
  - Wprowadź nowe słowo do pola tekstowego.
- - Kliknij przycisk "Add".
-
-
-
-
-
-
+ - Kliknij przycisk "Szukaj".
+ - Poniżej wyświetli się definicja danego słowa po angielsku
 
 
 # Getting Started with Create React App
