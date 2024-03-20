@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import useDictionary from '../hooks/useDictionary';
+import { useDictionaryContext } from '../contexts/DictionaryContext';
 
 const Vocabulary: React.FC = () => {
   const [word, setWord] = useState<string>('');
   const [definition, setDefinition] = useState<string>('');
-  const { dictionary, addWordToDictionary } = useDictionary();
+  const { dictionary, addWordToDictionary } = useDictionaryContext();
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setWord(event.target.value);
@@ -41,15 +41,15 @@ const Vocabulary: React.FC = () => {
         <input type="text" value={word} onChange={handleInputChange} />
         <button type="submit">Add Word</button>
       </form>
-      <h2>Dictionary:</h2>
+      <h2>Last 3 Words:</h2>
       <ul>
-        {dictionary.map(({ word, definition }, index) => (
+        {dictionary.slice(0, 3).map(({ word, definition }, index) => (
           <li key={index}>
             <strong>{word}:</strong> {definition}
           </li>
         ))}
       </ul>
-      <Link to="/">Go Back</Link>
+      <Link to="/progress">Go to Progress</Link>
     </div>
   );
 };

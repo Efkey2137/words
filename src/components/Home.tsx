@@ -7,7 +7,7 @@ const Home: React.FC = () => {
       <h1>Homepage</h1>
       <Link to="/vocabulary">Vocabulary</Link>
       <br />
-      <Link to="/progress">Sprawdź progress</Link>
+      <Link to="/progress">Zobacz Progress</Link>
     </div>
   );
 };
