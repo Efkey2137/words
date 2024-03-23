@@ -1,36 +1,25 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { useContext } from 'react';
+import { VocabularyContext, VocabularyContextType } from './VocabularyContext';
+import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css';
 
-interface DictionaryContextType {
-  dictionary: { word: string; definition: string }[];
-  addWordToDictionary: (word: string, definition: string) => boolean;
-}
-
-const DictionaryContext = createContext<DictionaryContextType>({
-  dictionary: [],
-  addWordToDictionary: () => false,
-});
-
-export const useDictionaryContext = () => useContext(DictionaryContext);
-
-export const DictionaryProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [dictionary, setDictionary] = useState<{ word: string; definition: string }[]>(() => {
-    const storedDictionary = localStorage.getItem('dictionary');
-    return storedDictionary ? JSON.parse(storedDictionary) : [];
-  });
-
-  const addWordToDictionary = (word: string, definition: string) => {
-    const newWord = { word, definition };
-    const newDictionary = [newWord, ...dictionary.slice(0, 2)];
-    setDictionary(newDictionary);
-    localStorage.setItem('dictionary', JSON.stringify(newDictionary));
-    return true;
-  };
+const Progress: React.FC = () => {
+  const context = useContext(VocabularyContext) as VocabularyContextType;
 
   return (
-    <DictionaryContext.Provider value={{ dictionary, addWordToDictionary }}>
-      {children}
-    </DictionaryContext.Provider>
+    <div className="container">
+      <h2 className="mt-4">Dictionary</h2>
+      <ul className="list-group">
+        {context.dictionary.map(({ word, definition }, index) => (
+          <li key={index} className="list-group-item bg-dark text-white">
+            <strong>{word}:</strong> {definition}
+          </li>
+        ))}
+      </ul>
+      <Link to="/" className="mt-4 d-block">Go Back</Link>
+    </div>
   );
 };
 
-
+export default Progress;
